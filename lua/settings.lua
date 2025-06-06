@@ -24,3 +24,5 @@ vim.opt.termguicolors = true         -- Enable true colors
 vim.opt.foldmethod = 'syntax'        -- Set fold method to syntax
 vim.opt.foldlevel = 99               -- Open all folds by default
 
+-- Colorscheme
+vim.cmd('colorscheme tokyonight')    -- Set the colorscheme to tokyonight

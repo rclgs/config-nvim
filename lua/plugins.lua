@@ -9,4 +9,19 @@ if not vim.loop.fs_stat(mini_path) then
   vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
 
+-- Set up 'mini.deps'
 require('mini.deps').setup({ path = { package = path_package } })
+
+-- Use 'mini.deps'. `now()` and `later()` are helpers for a safe two-stage
+-- startup and are optional.
+local add, later, now = MiniDeps.add, MiniDeps.later, MiniDeps.now
+
+now(function() require('mini.diff').setup() end)
+now(function() require('mini.git').setup() end)
+now(function() require('mini.icons').setup() end)
+now(function() require('mini.statusline').setup() end)
+now(function() require('mini.tabline').setup() end)
+
+now(function ()
+  add({ source = 'folke/tokyonight.nvim' })
+end)
