@@ -15,9 +15,10 @@ vim.opt.hlsearch = true                  -- Highlight search results
 vim.opt.incsearch = true                 -- Incremental search
 
 -- Display settings
-vim.opt.wrap = true                      -- Enable line wrapping
-vim.opt.textwidth = 80                   -- Set text width to 80 columns
+vim.opt.colorcolumn = "80"               -- Highlight the 80th column
+vim.opt.linebreak = true                 -- Wrap lines at word boundaries
 vim.opt.termguicolors = true             -- Enable true colors
+vim.opt.wrap = true                      -- Enable line wrapping
 
 -- Folding settings
 vim.opt.foldmethod = 'syntax'            -- Set fold method to syntax
